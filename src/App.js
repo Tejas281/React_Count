@@ -9,12 +9,14 @@ function App() {
     {
       firstname :"Rathod",
       lastname :"Tejas",
-      age :"21"
+      age :"21",
+      employeeId : "1" 
     },
     {
       firstname :"Chuhan" ,
       lastname :"Akash" ,
-      age :"21"
+      age :"21",
+      employeeId : "2"
     }
   ]
 
@@ -26,11 +28,14 @@ function App() {
     }
     <h1> Company Directory</h1>
 
-{employeInformation.map((props)=>{
-  const {firstname,lastname,age} =props;
-  return (
-<Props firstname={firstname} lastname={lastname} age={age}/>
-  );
+  {
+    employeInformation.map((props)=>{
+     //this are used to distructuring
+      // const {firstname,lastname,age} =props;
+  
+    return<Props key={props.employeeId} {...props}/>;
+          // this are use to destructuring <Props firstname={firstname} lastname={lastname} age={age}/>
+
 })}
   {/*
   //this are defined of props method.... 
